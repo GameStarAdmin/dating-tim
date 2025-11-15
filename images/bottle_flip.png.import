@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8rjvyaevr486"
-path="res://.godot/imported/bottle flip.png-ed22e6539b3231ac10d3aa35a3c5d321.ctex"
+path="res://.godot/imported/bottle_flip.png-9eb1249a263bd80ac8ba178e92dca611.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/bottle flip.png"
-dest_files=["res://.godot/imported/bottle flip.png-ed22e6539b3231ac10d3aa35a3c5d321.ctex"]
+source_file="res://images/bottle_flip.png"
+dest_files=["res://.godot/imported/bottle_flip.png-9eb1249a263bd80ac8ba178e92dca611.ctex"]
 
 [params]
 
