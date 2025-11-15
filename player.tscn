@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://vsdwg10xo8kv"]
+
+[ext_resource type="Script" uid="uid://cnyhyrnhg504e" path="res://player.gd" id="1_4flbx"]
+
+[node name="Player" type="Node"]
+script = ExtResource("1_4flbx")
+
+[node name="Card1" type="Node" parent="."]
+
+[node name="Card2" type="Node" parent="."]
+
+[node name="Card3" type="Node" parent="."]
+
+[node name="RizzBar" type="Node" parent="."]
