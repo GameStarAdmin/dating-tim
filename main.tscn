@@ -1,3 +1,27 @@
-[gd_scene format=3 uid="uid://di5n6lrtljsp7"]
+[gd_scene load_steps=5 format=3 uid="uid://bgtr2dkdwsilq"]
 
-[node name="Main" type="Node3D"]
+[ext_resource type="Script" uid="uid://kaadye2t1vjl" path="res://game_controller.gd" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://b4e6olcjuwvtd" path="res://target.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://cnyhyrnhg504e" path="res://player.gd" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://dbelsqe714lc6" path="res://deck.gd" id="3_lquwl"]
+
+[node name="Main" type="Node" node_paths=PackedStringArray("p1", "p2", "target", "deck")]
+script = ExtResource("1_1bvp3")
+p1 = NodePath("Player1")
+p2 = NodePath("Player2")
+target = NodePath("TIM")
+deck = NodePath("Deck")
+
+[node name="TIM" type="Node" parent="."]
+script = ExtResource("1_h2yge")
+
+[node name="Player1" type="Node" parent="." node_paths=PackedStringArray("game_controller")]
+script = ExtResource("2_1bvp3")
+game_controller = NodePath("..")
+
+[node name="Player2" type="Node" parent="." node_paths=PackedStringArray("game_controller")]
+script = ExtResource("2_1bvp3")
+game_controller = NodePath("..")
+
+[node name="Deck" type="Node" parent="."]
+script = ExtResource("3_lquwl")

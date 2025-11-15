@@ -1,4 +1,7 @@
-extends Node
+[gd_scene load_steps=2 format=3 uid="uid://b3r4hryfrvy06"]
+
+[sub_resource type="GDScript" id="GDScript_8qdb3"]
+script/source = "extends Node
 
 # Constants
 const WIN_RIZZ = 100
@@ -6,14 +9,14 @@ const WIN_RIZZ = 100
 @export var p1 : Player
 @export var p2 : Player
 @export var target : Target
-#@export var deck : Deck
+@export var deck : Deck
 var currentPlayer = 1
 var winner = 0
 
 var playing = false
+var player_selected = false
 
-func _ready() -> void:
-	pass
+func _ready() -> void:	pass
 
 func _process(delta: float) -> void:
 	if (playing):
@@ -23,19 +26,23 @@ func _process(delta: float) -> void:
 			PlayTurn(p2)
 
 func PlayTurn(player: Player):
-	#player.hand = deck.draw()
-	#wait for playerSelection
+	player.hand = deck.draw(3)
+	player.canSelect = true
+	while (!player_selected):
+		pass
 	player.rizz = target.DamageCompute(player.card)
+	player_selected = false
+	player.canSelect = false
 	CheckWin()
 	NextTurn()
 
 func CheckWin():
 	if p1.rizz >= WIN_RIZZ:
 		winner = 1
-		get_tree().change_scene_to_file("res://win.tscn")
+		get_tree().change_scene_to_file(\"res://win.tscn\")
 	if p2.rizz >= WIN_RIZZ:
 		winner = 2
-		get_tree().change_scene_to_file("res://win.tscn")
+		get_tree().change_scene_to_file(\"res://win.tscn\")
 		
 
 func NextTurn():
@@ -43,3 +50,7 @@ func NextTurn():
 		currentPlayer = 2
 	else:
 		currentPlayer = 1
+"
+
+[node name="GlobalScene" type="Node"]
+script = SubResource("GDScript_8qdb3")

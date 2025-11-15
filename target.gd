@@ -17,7 +17,7 @@ var mults = {
 	"cringe" : 0,
 }
 
-func DamageCompute(card):
+func DamageCompute(card : BaseCard):
 	var final_rizz = 0
 	for stat in mults:
 		final_rizz += mults[stat] * card.stats[stat]

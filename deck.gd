@@ -1,4 +1,5 @@
-extends Sprite2D
+class_name Deck
+extends Node
 
 const DECK_SIZE = 60
 var deck = []
