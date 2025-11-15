@@ -17,7 +17,6 @@ var requirements = Stats.new()
 func requires(out_stats)-> bool:
 	return stats <= out_stats
 	
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
