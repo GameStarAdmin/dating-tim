@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgtr2dkdwsilq"]
+[gd_scene load_steps=5 format=3 uid="uid://ch14ggqwatdh0"]
 
-[ext_resource type="Script" uid="uid://kaadye2t1vjl" path="res://game_controller.gd" id="1_1bvp3"]
-[ext_resource type="Script" uid="uid://b4e6olcjuwvtd" path="res://target.gd" id="1_h2yge"]
-[ext_resource type="Script" uid="uid://cnyhyrnhg504e" path="res://player.gd" id="2_1bvp3"]
+[ext_resource type="Script" path="res://game_controller.gd" id="1_1bvp3"]
+[ext_resource type="Script" path="res://target.gd" id="1_h2yge"]
+[ext_resource type="Script" path="res://player.gd" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://dbelsqe714lc6" path="res://deck.gd" id="3_lquwl"]
 
 [node name="Main" type="Node" node_paths=PackedStringArray("p1", "p2", "target", "deck")]

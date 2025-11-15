@@ -7,13 +7,14 @@ var deck = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range(DECK_SIZE):
-		deck.append(get_node("BaseCard"))
+		deck.append(BaseCard.new())
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func draw(x): 
+	assert(deck.size() >= x )
 	var give = deck.slice(0, x)
 	deck = deck.slice(x)
 	return give
