@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Dating-tim"
-run/main_scene="uid://vngp2oupe6rf"
+run/main_scene="uid://ce4wogvgy1psy"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

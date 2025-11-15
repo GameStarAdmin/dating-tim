@@ -4,6 +4,6 @@
 
 [sub_resource type="ImageTexture" id="ImageTexture_p0gil"]
 
-[node name="BaseCard" type="Sprite2D"]
+[node name="BaseCard" type="Sprite3D"]
 texture = SubResource("ImageTexture_p0gil")
 script = ExtResource("1_epf87")

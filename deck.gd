@@ -1,13 +1,17 @@
 class_name Deck
-extends Node
+extends Sprite3D
 
 const DECK_SIZE = 60
 var deck = []
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func init() -> void:
+	print("cc")
 	for i in range(DECK_SIZE):
-		deck.append(BaseCard.new())
+		print("start")
+		var newcard = BaseCard.new()
+		print(newcard)
+		deck.append(newcard)
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

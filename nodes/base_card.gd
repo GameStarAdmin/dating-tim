@@ -1,5 +1,5 @@
 class_name BaseCard
-extends Sprite2D
+extends Sprite3D
 
 var stats = {
   "toxique" : 0,
@@ -24,14 +24,32 @@ func requires(out_stats)-> bool:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var json = JSON.new()
-	var content = ""
 	var file = FileAccess.open("res://cards/cards.json", FileAccess.READ)
-	file.store_string(content)
+	var content = file.get_as_text()
 	var error = json.parse(content)
 	if error == OK:
 		var data_received = json.data
-		cards = data_received
-
+		print(data_received)
+		cards = data_received["cards"]
+		var card = cards.pick_random()
+		self.stats ={
+  			"toxique" : card.toxique,
+  			"beauf" : card.beauf,
+  			"nerd" : card.nerd,
+  			"clown" : card.clown,
+ 			"simp" : card.simp,
+  			"riche" : card.riche,
+  			"sympa" : card.sympa,
+  			"cool" : card.cool,
+  			"kinky" : card.kinky,
+  			"cute" : card.cute,
+  			"kawaii" : card.kawaii,
+  			"cringe" : card.cringe,
+		}
+		self.texture = load(card.image)
+	else:
+		print("JSON Parse Error: ", json.get_error_message(), " in ", content, " at line ", json.get_error_line())
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
