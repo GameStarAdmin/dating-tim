@@ -1,4 +1,3 @@
-class_name GameController
 extends Node
 
 # Constants
@@ -6,17 +5,15 @@ const WIN_RIZZ = 100
 
 @export var p1 : Player
 @export var p2 : Player
-#@export var target : Target
+@export var target : Target
 #@export var deck : Deck
-#@export var sceneManager : SceneManager
 var currentPlayer = 1
+var winner = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if currentPlayer == 1:
 		PlayTurn(p1)
@@ -26,15 +23,18 @@ func _process(delta: float) -> void:
 func PlayTurn(player: Player):
 	#player.hand = deck.draw()
 	#wait for playerSelection
-	#player.rizz = target.computeDamage(player.card)
+	player.rizz = target.DamageCompute(player.card)
 	CheckWin()
 	NextTurn()
 
 func CheckWin():
 	if p1.rizz >= WIN_RIZZ:
-		pass #replace by win anim idk
-	elif p2.rizz >= WIN_RIZZ:
-		pass #idem
+		winner = 1
+		get_tree().change_scene_to_file("res://win.tscn")
+	if p2.rizz >= WIN_RIZZ:
+		winner = 2
+		get_tree().change_scene_to_file("res://win.tscn")
+		
 
 func NextTurn():
 	if currentPlayer == 1:

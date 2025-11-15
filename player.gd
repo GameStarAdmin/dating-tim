@@ -12,7 +12,7 @@ var selected = 1
 var rizz = 0
 var card = null
 var hand : Array
-@export var gameController : GameController #temp type to avoid errors
+@export var global : Global
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
