@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1uoceueat1e"
-path="res://.godot/imported/sécher les cours.png-cc98a47516eaf7c3a13dae74fd9b1add.ctex"
+path="res://.godot/imported/sécher_les_cours.png-4e93755080d023894f7f2ed2bf536faa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/sécher les cours.png"
-dest_files=["res://.godot/imported/sécher les cours.png-cc98a47516eaf7c3a13dae74fd9b1add.ctex"]
+source_file="res://images/sécher_les_cours.png"
+dest_files=["res://.godot/imported/sécher_les_cours.png-4e93755080d023894f7f2ed2bf536faa.ctex"]
 
 [params]
 

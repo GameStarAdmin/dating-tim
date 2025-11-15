@@ -31,7 +31,7 @@ var requirements = {
 }
 
 
-
+var cards = []
 
 func requires(out_stats)-> bool:
 	return stats <= out_stats
@@ -39,11 +39,13 @@ func requires(out_stats)-> bool:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var json = JSON.new()
-	var error = json.parse(json_string)
+	var content = ""
+	var file = FileAccess.open("res://cards/cards.json", FileAccess.READ)
+	file.store_string(content)
+	var error = json.parse(content)
 	if error == OK:
 		var data_received = json.data
-		if typeof(data_received) == TYPE_ARRAY:
-			print(data_received) 
+		cards = data_received
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
