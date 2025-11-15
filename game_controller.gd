@@ -7,7 +7,7 @@ const WIN_RIZZ = 100
 @export var p1 : Player
 @export var p2 : Player
 @export var target : Target
-@export var deck : Deck
+@export var deck : Deck = Deck.new()
 var currentPlayer = 1
 var winner = 0
 

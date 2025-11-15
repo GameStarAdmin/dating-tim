@@ -5,7 +5,7 @@ const DECK_SIZE = 60
 var deck = []
 
 # Called when the node enters the scene tree for the first time.
-func init() -> void:
+func _init() -> void:
 	print("cc")
 	for i in range(DECK_SIZE):
 		print("start")
@@ -18,6 +18,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func draw(x): 
+	print(deck.size())
 	assert(deck.size() >= x )
 	var give = deck.slice(0, x)
 	deck = deck.slice(x)

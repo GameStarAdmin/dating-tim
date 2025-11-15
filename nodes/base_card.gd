@@ -22,14 +22,13 @@ func requires(out_stats)-> bool:
 	return stats <= out_stats
 	
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _init() -> void:
 	var json = JSON.new()
 	var file = FileAccess.open("res://cards/cards.json", FileAccess.READ)
 	var content = file.get_as_text()
 	var error = json.parse(content)
 	if error == OK:
 		var data_received = json.data
-		print(data_received)
 		cards = data_received["cards"]
 		var card = cards.pick_random()
 		self.stats ={
