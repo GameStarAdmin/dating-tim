@@ -21,7 +21,7 @@ var mults = {
 var target_name = ""
 
 func _ready() -> void:
-	target_name = names[randi_range(0, names.size())]
+	target_name = names[randi_range(0, names.size() - 1)]
 	$Sprite3D.texture = preload("res://images/tim2.png")
 
 func DamageCompute(card : BaseCard):

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cskysnbb3eiid"]
+[gd_scene load_steps=8 format=3 uid="uid://c53elo2ln43dy"]
 
 [ext_resource type="Script" uid="uid://kaadye2t1vjl" path="res://game_controller.gd" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://b4e6olcjuwvtd" path="res://target.gd" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://cnyhyrnhg504e" path="res://player.gd" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bjlqbejbpaw23" path="res://images/tim2.png" id="3_7mycd"]
 [ext_resource type="Script" uid="uid://dbelsqe714lc6" path="res://deck.gd" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://dwpu34j1rfjqe" path="res://images/miauler.png" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://darms7n3gpy2r" path="res://icon.svg" id="5_272bh"]
@@ -16,6 +17,9 @@ deck = NodePath("Deck")
 
 [node name="Target" type="Node" parent="."]
 script = ExtResource("1_h2yge")
+
+[node name="Sprite3D" type="Sprite3D" parent="Target"]
+texture = ExtResource("3_7mycd")
 
 [node name="Player1" type="Node" parent="." node_paths=PackedStringArray("progress_bar", "cards", "game_controller")]
 script = ExtResource("2_1bvp3")
