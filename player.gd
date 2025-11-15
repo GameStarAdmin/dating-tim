@@ -1,3 +1,4 @@
+class_name Player
 extends Node
 
 # Stats modifiers
@@ -10,8 +11,8 @@ var selected = 1
 
 var rizz = 0
 var card = null
-var hand = [1, 2, 3]
-@export var gameController : Node2D #temp type to avoid errors
+var hand : Array
+@export var gameController : GameController #temp type to avoid errors
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
