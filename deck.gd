@@ -2,12 +2,13 @@ class_name Deck
 extends Node
 
 const DECK_SIZE = 60
-var deck = []
+var deck : Array[BaseCard] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range(DECK_SIZE):
 		deck.append(BaseCard.new())
+		print(i)
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

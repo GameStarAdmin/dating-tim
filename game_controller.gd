@@ -3,6 +3,7 @@ extends Node
 
 # Constants
 const WIN_RIZZ = 100
+const MIN_RIZZ = -100
 
 @export var p1 : Player
 @export var p2 : Player
@@ -18,15 +19,21 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if currentPlayer == 1:
-		PlayTurn(p1)
+		if(!player_selected):
+			PlayTurn(p1)
+		else:
+			FinishTurn(p1)
 	else:
-		PlayTurn(p2)
+		if(!player_selected):
+			PlayTurn(p2)
+		else:
+			FinishTurn(p2)
 
 func PlayTurn(player: Player):
 	player.hand = deck.draw(3)
 	player.canSelect = true
-	while (!player_selected):
-		pass
+
+func FinishTurn(player : Player):
 	player.rizz = target.DamageCompute(player.card)
 	player_selected = false
 	player.canSelect = false
@@ -40,7 +47,6 @@ func CheckWin():
 	if p2.rizz >= WIN_RIZZ:
 		winner = 2
 		get_tree().change_scene_to_file("res://win.tscn")
-		
 
 func NextTurn():
 	if currentPlayer == 1:
