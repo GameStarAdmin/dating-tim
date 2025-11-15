@@ -12,6 +12,11 @@ class Stats:
 	var sympa = 0
 
 var stats = Stats.new()
+var requirements = Stats.new()
+
+func requires(out_stats)-> bool:
+	return stats <= out_stats
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,6 +38,8 @@ func new(toxic, manipulation, beauf, nerd, clown, simp, riche, wholesome, sympa,
 	stats.wholesome = wholesome
 	stats.sympa = sympa
 	stats.texture = image
+	
+
 
 func get_stats() -> Stats:
 	return stats
