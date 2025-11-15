@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://baptrrw5rv6tv"]
 
 [node name="Win" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1153.0
+offset_bottom = 647.0
+theme_override_font_sizes/font_size = 76
+text = "Vous êtes PROBLEMATIQUES"
+horizontal_alignment = 1
+vertical_alignment = 1
