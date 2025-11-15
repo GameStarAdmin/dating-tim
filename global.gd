@@ -10,15 +10,18 @@ const WIN_RIZZ = 100
 var currentPlayer = 1
 var winner = 0
 
+var playing = false
+
 func _ready() -> void:
 	pass
 
 
 func _process(delta: float) -> void:
-	if currentPlayer == 1:
-		PlayTurn(p1)
-	else:
-		PlayTurn(p2)
+	if (playing):
+		if currentPlayer == 1:
+			PlayTurn(p1)
+		else:
+			PlayTurn(p2)
 
 func PlayTurn(player: Player):
 	#player.hand = deck.draw()

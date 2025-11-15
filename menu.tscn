@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://vngp2oupe6rf"]
+
+[ext_resource type="Script" uid="uid://d2vub7yyxsw4q" path="res://menu.gd" id="1_lti8b"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_lti8b")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 51.0
+offset_top = 198.99998
+offset_right = 1101.0
+offset_bottom = 445.0
+rotation = -0.20769419
+theme_override_font_sizes/font_size = 180
+text = "DATING TIM"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 266.0
+offset_top = 383.0
+offset_right = 911.0
+offset_bottom = 598.0
+text = "Start"
+
+[connection signal="pressed" from="Button" to="." method="Start"]
