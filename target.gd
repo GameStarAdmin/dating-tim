@@ -4,18 +4,18 @@ var names = ["Tim"]
 
 #Stats (multipliers)
 var mults = {
-	"toxique" : 1,
-	"beauf" : 1,
-	"nerd" : 1,
-	"clown" : 1,
-	"simp" : 1,
-	"riche" : 1,
-	"sympa" : -1,
-	"cool" : -1,
-	"kinky" : -1,
+	"toxique" : -4,
+	"beauf" : 4,
+	"nerd" : 10,
+	"clown" : 7,
+	"simp" : -5,
+	"riche" : 6,
+	"sympa" : 6,
+	"cool" : -3,
+	"kinky" : -2,
 	"cute" : -1,
-	"kawaii" : -1,
-	"cringe" : -1,
+	"kawaii" : -6,
+	"cringe" : 3,
 }
 
 var target_name = ""
