@@ -7,6 +7,8 @@ extends Node
 # Visuals
 @export var progress_bar : ProgressBar
 @export var cards : Array[Sprite2D]
+@export var player_number : int
+var cards_default_scale
 
 # :3
 var canSelect = false
@@ -39,9 +41,24 @@ func CheckInput():
 func _ready() -> void:
 	progress_bar.max_value = game_controller.WIN_RIZZ
 	progress_bar.min_value = game_controller.MIN_RIZZ
+	assert(player_number != 0)
+	
+	cards_default_scale = cards[0].scale
 
 func _process(delta: float) -> void:
 	CheckInput()
 	progress_bar.value = rizz
-	for i in range(hand.size()):
-		cards[i].texture = hand[i].texture
+	
+	if(game_controller.currentPlayer == player_number):
+		for i in range(hand.size()):
+			cards[i].texture = hand[i].texture
+			if i == selected:
+				cards[i].z_index = 1
+				cards[i].scale = cards_default_scale * 1.1
+			else:
+				cards[i].z_index = 0
+				cards[i].scale = cards_default_scale
+	else:
+		for i in range(cards.size()):
+			cards[i].texture = null
+			

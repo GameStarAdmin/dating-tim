@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cfl6isbbqrjev" path="res://win_screen.gd" id="1_wao2c"]
 
-[node name="Win" type="Node2D" node_paths=PackedStringArray("label")]
+[node name="Win" type="Node2D"]
 script = ExtResource("1_wao2c")
-label = NodePath("Label")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 1153.0

@@ -26,6 +26,7 @@ texture = ExtResource("3_7mycd")
 script = ExtResource("2_1bvp3")
 progress_bar = NodePath("ProgressBar")
 cards = [NodePath("Card1"), NodePath("Card2"), NodePath("Card3")]
+player_number = 1
 game_controller = NodePath("..")
 
 [node name="ProgressBar" type="ProgressBar" parent="Player1"]
@@ -77,6 +78,7 @@ texture = ExtResource("5_272bh")
 script = ExtResource("2_1bvp3")
 progress_bar = NodePath("ProgressBar")
 cards = [NodePath("Card1"), NodePath("Card2"), NodePath("Card3")]
+player_number = 2
 game_controller = NodePath("..")
 
 [node name="ProgressBar" type="ProgressBar" parent="Player2"]
