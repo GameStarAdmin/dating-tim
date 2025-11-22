@@ -29,13 +29,13 @@ func DamageCompute(card : BaseCard):
 	for stat in mults:
 		final_rizz += mults[stat] * card.stats[stat]
 	
-	if final_rizz < -12:
+	if final_rizz < -9:
 		$Sprite3D.texture = load("res://images/tim0.png")
-	elif final_rizz < -6:
+	elif final_rizz < -3:
 		$Sprite3D.texture = load("res://images/tim1.png")
-	elif final_rizz < 0:
+	elif final_rizz < 3:
 		$Sprite3D.texture = load("res://images/tim2.png")
-	elif final_rizz < 6:
+	elif final_rizz < 9:
 		$Sprite3D.texture = load("res://images/tim3.png")
 	else:
 		$Sprite3D.texture = load("res://images/tim4.png")
