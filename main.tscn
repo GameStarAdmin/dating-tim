@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cskysnbb3eiid"]
+[gd_scene load_steps=7 format=3 uid="uid://ch14ggqwatdh0"]
 
 [ext_resource type="Script" uid="uid://kaadye2t1vjl" path="res://game_controller.gd" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://b4e6olcjuwvtd" path="res://target.gd" id="1_h2yge"]
@@ -32,7 +32,7 @@ offset_top = 31.0
 offset_right = -20.0
 offset_bottom = 87.0
 grow_horizontal = 2
-value = 24.07
+value = 23.11
 fill_mode = 1
 show_percentage = false
 
