@@ -10,6 +10,11 @@ extends Node
 @export var player_number : int
 var cards_default_scale
 
+#Sounds
+@export var stream_player : AudioStreamPlayer2D
+@export var select_sound : AudioStreamMP3
+@export var rizz_sound : AudioStreamMP3
+
 # :3
 var canSelect = false
 var selected = 1
@@ -26,16 +31,19 @@ func CheckInput():
 		if Input.is_action_just_pressed("ui_accept"):
 			card = hand[selected]
 			game_controller.player_selected = true
+			PlayRizz()
 			print("Selected card " + str(selected))
 		
 		if Input.is_action_just_pressed("ui_right"):
 			if selected < hand.size() - 1:
 				selected += 1
+				PlaySelectCardSound()
 				print(selected)
 		
 		if Input.is_action_just_pressed("ui_left"):
 			if selected > 0:
 				selected -= 1
+				PlaySelectCardSound()
 				print(selected)
 
 func _ready() -> void:
@@ -61,4 +69,11 @@ func _process(delta: float) -> void:
 	else:
 		for i in range(cards.size()):
 			cards[i].texture = null
-			
+
+func PlaySelectCardSound():
+	stream_player.stream = select_sound
+	stream_player.play()
+
+func PlayRizz():
+	stream_player.stream = rizz_sound
+	stream_player.play()

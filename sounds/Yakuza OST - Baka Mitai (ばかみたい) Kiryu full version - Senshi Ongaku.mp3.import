@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://csj4blen10djt"
+path="res://.godot/imported/Yakuza OST - Baka Mitai (ばかみたい) Kiryu full version - Senshi Ongaku.mp3-49ce1d0a613fff6d856ee8258a15725c.mp3str"
+
+[deps]
+
+source_file="res://sounds/Yakuza OST - Baka Mitai (ばかみたい) Kiryu full version - Senshi Ongaku.mp3"
+dest_files=["res://.godot/imported/Yakuza OST - Baka Mitai (ばかみたい) Kiryu full version - Senshi Ongaku.mp3-49ce1d0a613fff6d856ee8258a15725c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

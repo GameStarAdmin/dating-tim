@@ -4,6 +4,8 @@ extends Node
 const DECK_SIZE = 60
 var deck : Array[BaseCard] = []
 
+@export var label : Label
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range(DECK_SIZE):
@@ -11,7 +13,7 @@ func _ready() -> void:
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	label.text = str(deck.size())
 
 func draw(x):
 	assert(deck.size() >= x )
