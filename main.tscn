@@ -7,9 +7,9 @@
 [ext_resource type="Script" uid="uid://dbelsqe714lc6" path="res://deck.gd" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://dwpu34j1rfjqe" path="res://images/miauler.png" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://darms7n3gpy2r" path="res://icon.svg" id="5_272bh"]
-[ext_resource type="Script" uid="uid://dxdmfyntkky0v" path="res://progress_bar.gd" id="5_kek77"]
-[ext_resource type="Texture2D" uid="uid://cd10p58hlsw84" path="res://images/dating_tim_background.jpg" id="8_5vw27"]
-[ext_resource type="Texture2D" uid="uid://s5t5axb3mecd" path="res://images/heart.webp" id="10_4c57u"]
+[ext_resource type="Script" path="res://progress_bar.gd" id="5_kek77"]
+[ext_resource type="PackedScene" uid="uid://bbfct0hkhtxv" path="res://background.tscn" id="9_4c57u"]
+[ext_resource type="PackedScene" uid="uid://d2pqxbvdejeiu" path="res://heart.tscn" id="10_efxa6"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4c57u"]
 
@@ -144,15 +144,6 @@ v_offset = 0.395
 projection = 1
 size = 6.0
 
-[node name="Background" type="Node" parent="."]
+[node name="Background" parent="." instance=ExtResource("9_4c57u")]
 
-[node name="Sprite3D" type="Sprite3D" parent="Background"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, 0.9141202, -5.5605335)
-texture = ExtResource("8_5vw27")
-
-[node name="heart" type="Node2D" parent="."]
-position = Vector2(575, 60)
-
-[node name="Sprite2D" type="Sprite2D" parent="heart"]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("10_4c57u")
+[node name="heart" parent="." instance=ExtResource("10_efxa6")]

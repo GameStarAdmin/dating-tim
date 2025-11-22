@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2pqxbvdejeiu"]
+
+[ext_resource type="Texture2D" uid="uid://s5t5axb3mecd" path="res://images/heart.webp" id="1_cixvg"]
+
+[node name="heart" type="Node2D"]
+position = Vector2(575, 60)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_cixvg")

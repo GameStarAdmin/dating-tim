@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbfct0hkhtxv"]
+
+[ext_resource type="Texture2D" uid="uid://cd10p58hlsw84" path="res://images/dating_tim_background.jpg" id="1_oabld"]
+
+[node name="Background" type="Node"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, 0.9141202, -5.5605335)
+texture = ExtResource("1_oabld")
