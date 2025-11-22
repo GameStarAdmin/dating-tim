@@ -1,16 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqpdylhcn6ccq"]
+[gd_scene load_steps=10 format=3 uid="uid://ch14ggqwatdh0"]
 
 [ext_resource type="Script" uid="uid://kaadye2t1vjl" path="res://game_controller.gd" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://cnyhyrnhg504e" path="res://player.gd" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://dbelsqe714lc6" path="res://deck.gd" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://dwpu34j1rfjqe" path="res://images/miauler.png" id="4_7mycd"]
+[ext_resource type="AudioStream" uid="uid://bgsfkrvwky1mu" path="res://sounds/card-select.mp3" id="4_272bh"]
+[ext_resource type="AudioStream" uid="uid://be7sjfvi30r1m" path="res://sounds/rizz-sound-effect.mp3" id="5_5vw27"]
 [ext_resource type="Texture2D" uid="uid://darms7n3gpy2r" path="res://icon.svg" id="5_272bh"]
-[ext_resource type="Script" uid="uid://dxdmfyntkky0v" path="res://progress_bar.gd" id="5_kek77"]
-[ext_resource type="PackedScene" uid="uid://bbfct0hkhtxv" path="res://background.tscn" id="9_4c57u"]
-[ext_resource type="PackedScene" uid="uid://dpcc1jlde0s73" path="res://target.tscn" id="9_kek77"]
-[ext_resource type="PackedScene" uid="uid://d2pqxbvdejeiu" path="res://heart.tscn" id="10_efxa6"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4c57u"]
+[ext_resource type="AudioStream" uid="uid://csj4blen10djt" path="res://sounds/Yakuza OST - Baka Mitai (ばかみたい) Kiryu full version - Senshi Ongaku.mp3" id="9_kek77"]
 
 [node name="Main" type="Node" node_paths=PackedStringArray("p1", "p2", "target", "deck")]
 script = ExtResource("1_1bvp3")
@@ -19,11 +16,17 @@ p2 = NodePath("Player2")
 target = NodePath("Target")
 deck = NodePath("Deck")
 
-[node name="Player1" type="Node" parent="." node_paths=PackedStringArray("progress_bar", "cards", "game_controller")]
+[node name="TIM" type="Node" parent="."]
+script = ExtResource("1_h2yge")
+
+[node name="Player1" type="Node" parent="." node_paths=PackedStringArray("progress_bar", "cards", "stream_player", "game_controller")]
 script = ExtResource("2_1bvp3")
 progress_bar = NodePath("ProgressBar")
 cards = [NodePath("Card1"), NodePath("Card2"), NodePath("Card3")]
 player_number = 1
+stream_player = NodePath("../SFX")
+select_sound = ExtResource("4_272bh")
+rizz_sound = ExtResource("5_5vw27")
 game_controller = NodePath("..")
 
 [node name="ProgressBar" type="ProgressBar" parent="Player1"]
@@ -73,11 +76,14 @@ position = Vector2(0, -881.75165)
 scale = Vector2(3.1958184, 3.1958184)
 texture = ExtResource("5_272bh")
 
-[node name="Player2" type="Node" parent="." node_paths=PackedStringArray("progress_bar", "cards", "game_controller")]
+[node name="Player2" type="Node" parent="." node_paths=PackedStringArray("progress_bar", "cards", "stream_player", "game_controller")]
 script = ExtResource("2_1bvp3")
 progress_bar = NodePath("ProgressBar")
 cards = [NodePath("Card1"), NodePath("Card2"), NodePath("Card3")]
 player_number = 2
+stream_player = NodePath("../SFX")
+select_sound = ExtResource("4_272bh")
+rizz_sound = ExtResource("5_5vw27")
 game_controller = NodePath("..")
 
 [node name="ProgressBar" type="ProgressBar" parent="Player2"]
@@ -125,20 +131,20 @@ position = Vector2(0, -881.75165)
 scale = Vector2(3.1958184, 3.1958184)
 texture = ExtResource("5_272bh")
 
-[node name="Deck" type="Node" parent="."]
+[node name="Deck" type="Node" parent="." node_paths=PackedStringArray("label")]
 script = ExtResource("3_lquwl")
+label = NodePath("Label")
 
-[node name="cameraPivot" type="Node" parent="."]
+[node name="Label" type="Label" parent="Deck"]
+offset_left = 541.0
+offset_top = 423.0
+offset_right = 639.0
+offset_bottom = 541.0
+theme_override_font_sizes/font_size = 86
+text = "69"
 
-[node name="Camera3D" type="Camera3D" parent="cameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2561765)
-h_offset = 0.16
-v_offset = 0.395
-projection = 1
-size = 6.0
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
 
-[node name="Background" parent="." instance=ExtResource("9_4c57u")]
-
-[node name="heart" parent="." instance=ExtResource("10_efxa6")]
-
-[node name="Target" parent="." instance=ExtResource("9_kek77")]
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_kek77")
+autoplay = true

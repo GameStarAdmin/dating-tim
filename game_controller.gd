@@ -4,6 +4,7 @@ extends Node
 # Constants
 const WIN_RIZZ = 100
 const MIN_RIZZ = 0
+const HAND_SIZE = 3
 
 @export var p1 : Player
 @export var p2 : Player
@@ -25,7 +26,7 @@ func _process(delta: float) -> void:
 
 func PlayTurn(player: Player):
 	if(!player_drawn):
-		player.hand = deck.draw(3)
+		player.hand = deck.draw(HAND_SIZE)
 		player_drawn = true
 		player.canSelect = true
 		
@@ -40,11 +41,27 @@ func PlayTurn(player: Player):
 		NextTurn()
 
 func CheckWin():
+	if deck.deck.size() < HAND_SIZE:
+		if(p1.rizz < p2.rizz):
+			global_vars.winner = 2
+			global_vars.rizz_amount = p2.rizz
+			get_tree().change_scene_to_file("res://win.tscn")
+		elif(p1.rizz == p2.rizz):
+			global_vars.winner = 3
+			global_vars.rizz_amount = 100000
+			get_tree().change_scene_to_file("res://win.tscn")
+		else:
+			global_vars.winner = 1
+			global_vars.rizz_amount = p1.rizz
+			get_tree().change_scene_to_file("res://win.tscn")
+			
 	if p1.rizz >= WIN_RIZZ:
 		global_vars.winner = 1
+		global_vars.win_by_max_rizz = true
 		get_tree().change_scene_to_file("res://win.tscn")
 	if p2.rizz >= WIN_RIZZ:
 		global_vars.winner = 2
+		global_vars.win_by_max_rizz = true
 		get_tree().change_scene_to_file("res://win.tscn")
 
 func NextTurn():
