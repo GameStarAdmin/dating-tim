@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqpdylhcn6ccq"]
+[gd_scene load_steps=12 format=3 uid="uid://dqpdylhcn6ccq"]
 
 [ext_resource type="Script" uid="uid://kaadye2t1vjl" path="res://game_controller.gd" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://b4e6olcjuwvtd" path="res://target.gd" id="1_h2yge"]
@@ -7,7 +7,11 @@
 [ext_resource type="Script" uid="uid://dbelsqe714lc6" path="res://deck.gd" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://dwpu34j1rfjqe" path="res://images/miauler.png" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://darms7n3gpy2r" path="res://icon.svg" id="5_272bh"]
+[ext_resource type="Script" uid="uid://dxdmfyntkky0v" path="res://progress_bar.gd" id="5_kek77"]
 [ext_resource type="Texture2D" uid="uid://cd10p58hlsw84" path="res://images/dating_tim_background.jpg" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://s5t5axb3mecd" path="res://images/heart.webp" id="10_4c57u"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4c57u"]
 
 [node name="Main" type="Node" node_paths=PackedStringArray("p1", "p2", "target", "deck")]
 script = ExtResource("1_1bvp3")
@@ -30,6 +34,7 @@ player_number = 1
 game_controller = NodePath("..")
 
 [node name="ProgressBar" type="ProgressBar" parent="Player1"]
+material = SubResource("CanvasItemMaterial_4c57u")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -41,6 +46,7 @@ grow_horizontal = 2
 value = 23.11
 fill_mode = 1
 show_percentage = false
+script = ExtResource("5_kek77")
 
 [node name="Card1" type="Sprite2D" parent="Player1"]
 position = Vector2(224.79654, 456.38562)
@@ -92,6 +98,7 @@ offset_bottom = 88.0
 grow_horizontal = 2
 value = 48.02
 show_percentage = false
+script = ExtResource("5_kek77")
 
 [node name="Card1" type="Sprite2D" parent="Player2"]
 position = Vector2(779.7965, 452.38562)
@@ -142,3 +149,10 @@ size = 6.0
 [node name="Sprite3D" type="Sprite3D" parent="Background"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, 0.9141202, -5.5605335)
 texture = ExtResource("8_5vw27")
+
+[node name="heart" type="Node2D" parent="."]
+position = Vector2(575, 60)
+
+[node name="Sprite2D" type="Sprite2D" parent="heart"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("10_4c57u")

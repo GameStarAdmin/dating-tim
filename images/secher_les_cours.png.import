@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1uoceueat1e"
-path="res://.godot/imported/sécher_les_cours.png-4e93755080d023894f7f2ed2bf536faa.ctex"
+uid="uid://5hbbmfoa0njf"
+path="res://.godot/imported/secher_les_cours.png-241eec8c3443a064e5c9b964622be1da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/sécher_les_cours.png"
-dest_files=["res://.godot/imported/sécher_les_cours.png-4e93755080d023894f7f2ed2bf536faa.ctex"]
+source_file="res://images/secher_les_cours.png"
+dest_files=["res://.godot/imported/secher_les_cours.png-241eec8c3443a064e5c9b964622be1da.ctex"]
 
 [params]
 

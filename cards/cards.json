@@ -49,7 +49,7 @@
   			"cute" : 0,
   			"kawaii" : 0,
   			"cringe" : 0,
-			"image" : "res://images/nutricoreD.png"
+			"image" : "res://images/nutriscoreD.png"
 		},
 		{
 			"nom": "On se fait chier en cours",
@@ -168,7 +168,23 @@
   			"cute" : 0,
   			"kawaii" : 0,
   			"cringe" : 0,
-			"image" : "res://images/sécher_les_cours.png"
+			"image" : "res://images/secher_les_cours.png"
+		},{
+			"nom": "Offrir de payer",
+			"texte": "Offrir de payer",
+			"toxique" : 0,
+  			"beauf" : 0,
+  			"nerd" : 0,
+ 			"clown" : 0,
+  			"simp" : 7,
+  			"riche" : 4,
+  			"sympa" : 0,
+  			"cool" : 0,
+  			"kinky" : 0,
+  			"cute" : 0,
+  			"kawaii" : 0,
+  			"cringe" : 0,
+			"image" : "res://images/payer.png"
 		}
 	]
 }
