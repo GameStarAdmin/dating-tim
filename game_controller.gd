@@ -10,7 +10,6 @@ const MIN_RIZZ = 0
 @export var target : Target
 @export var deck : Deck
 var currentPlayer = 1
-var winner = 0
 
 var player_selected = false
 var player_drawn = false
@@ -42,10 +41,10 @@ func PlayTurn(player: Player):
 
 func CheckWin():
 	if p1.rizz >= WIN_RIZZ:
-		winner = 1
+		global_vars.winner = 1
 		get_tree().change_scene_to_file("res://win.tscn")
 	if p2.rizz >= WIN_RIZZ:
-		winner = 2
+		global_vars.winner = 2
 		get_tree().change_scene_to_file("res://win.tscn")
 
 func NextTurn():
