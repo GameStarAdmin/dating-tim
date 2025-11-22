@@ -1,14 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqpdylhcn6ccq"]
+[gd_scene load_steps=11 format=3 uid="uid://dqpdylhcn6ccq"]
 
 [ext_resource type="Script" uid="uid://kaadye2t1vjl" path="res://game_controller.gd" id="1_1bvp3"]
-[ext_resource type="Script" uid="uid://b4e6olcjuwvtd" path="res://target.gd" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://cnyhyrnhg504e" path="res://player.gd" id="2_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://bjlqbejbpaw23" path="res://images/tim2.png" id="3_7mycd"]
 [ext_resource type="Script" uid="uid://dbelsqe714lc6" path="res://deck.gd" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://dwpu34j1rfjqe" path="res://images/miauler.png" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://darms7n3gpy2r" path="res://icon.svg" id="5_272bh"]
-[ext_resource type="Script" path="res://progress_bar.gd" id="5_kek77"]
+[ext_resource type="Script" uid="uid://dxdmfyntkky0v" path="res://progress_bar.gd" id="5_kek77"]
 [ext_resource type="PackedScene" uid="uid://bbfct0hkhtxv" path="res://background.tscn" id="9_4c57u"]
+[ext_resource type="PackedScene" uid="uid://dpcc1jlde0s73" path="res://target.tscn" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://d2pqxbvdejeiu" path="res://heart.tscn" id="10_efxa6"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4c57u"]
@@ -19,12 +18,6 @@ p1 = NodePath("Player1")
 p2 = NodePath("Player2")
 target = NodePath("Target")
 deck = NodePath("Deck")
-
-[node name="Target" type="Node" parent="."]
-script = ExtResource("1_h2yge")
-
-[node name="Sprite3D" type="Sprite3D" parent="Target"]
-texture = ExtResource("3_7mycd")
 
 [node name="Player1" type="Node" parent="." node_paths=PackedStringArray("progress_bar", "cards", "game_controller")]
 script = ExtResource("2_1bvp3")
@@ -147,3 +140,5 @@ size = 6.0
 [node name="Background" parent="." instance=ExtResource("9_4c57u")]
 
 [node name="heart" parent="." instance=ExtResource("10_efxa6")]
+
+[node name="Target" parent="." instance=ExtResource("9_kek77")]
