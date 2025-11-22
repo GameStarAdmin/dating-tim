@@ -17,25 +17,31 @@ var card : BaseCard
 var hand : Array[BaseCard]
 @export var game_controller : GameController
 
-func _input(event):
+var keyDown = false
+
+func CheckInput():
 	if canSelect:
-		if event.is_action_pressed("ui_accept"):
+		if Input.is_action_just_pressed("ui_accept"):
 			card = hand[selected]
 			game_controller.player_selected = true
+			print("Selected card " + str(selected))
 		
-		elif event.is_action("ui_right"):
+		if Input.is_action_just_pressed("ui_right"):
 			if selected < hand.size() - 1:
 				selected += 1
+				print(selected)
 		
-		elif event.is_action("ui_left"):
+		if Input.is_action_just_pressed("ui_left"):
 			if selected > 0:
 				selected -= 1
+				print(selected)
 
 func _ready() -> void:
 	progress_bar.max_value = game_controller.WIN_RIZZ
 	progress_bar.min_value = game_controller.MIN_RIZZ
 
 func _process(delta: float) -> void:
+	CheckInput()
 	progress_bar.value = rizz
-	for i in range(cards.size()):
+	for i in range(hand.size()):
 		cards[i].texture = hand[i].texture

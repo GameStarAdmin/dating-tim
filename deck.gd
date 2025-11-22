@@ -8,13 +8,12 @@ var deck : Array[BaseCard] = []
 func _ready() -> void:
 	for i in range(DECK_SIZE):
 		deck.append(BaseCard.new())
-		print(i)
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
-func draw(x): 
+func draw(x):
 	assert(deck.size() >= x )
 	var give = deck.slice(0, x)
 	deck = deck.slice(x)
